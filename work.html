@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Axiom Communications</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/axiom-logo-square.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="padding-top: 50px;">
+    <nav>
+        <div class="logo"><span class="axiom-highlight">Axiom</span> Communications</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">What we do</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#our-story">Company</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">What we do</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="index.html#our-story">Company</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="work-page">
+        <div class="container">
+            <h1>Our Work</h1>
+            <div class="work-grid">
+                
+            
+            <a href="#" class="work-item">
+                <div class="work-image">
+                    <img src="img/ecom.jpg" alt="Project 2">
+                </div>
+                <div class="work-content">
+                    <h3>E-commerce Platform for FashionHub</h3>
+                    <p>Designed and developed a user-friendly online shopping experience.</p>
+                    <span class="work-category">Web Development</span>
+                </div>
+            </a>
+            <a href="#" class="work-item">
+                <div class="work-image">
+                    <img src="img/social-media.jpg" alt="Project 3">
+                </div>
+                <div class="work-content">
+                    <h3>Social Media Campaign for EcoFriendly</h3>
+                    <p>Created engaging content to promote sustainable living practices.</p>
+                    <span class="work-category">Digital Marketing</span>
+                </div>
+            </a>
+            <a href="#" class="work-item">
+                <div class="work-image">
+                    <img src="img/mobileapp.jpg" alt="Project 4">
+                </div>
+                <div class="work-content">
+                    <h3>Mobile App for HealthTrack</h3>
+                    <p>Developed an intuitive health monitoring app for iOS and Android.</p>
+                    <span class="work-category">App Development</span>
+                </div>
+                </div>
+
+                
+                <!-- Add more work items as needed -->
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <!-- Add your footer content here -->
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function(event) {
+            event.stopPropagation();
+            this.classList.toggle('change');
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        // Close sidebar when clicking on any 'a' element within the sidebar
+        document.querySelectorAll('#sidebar a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('mobile-menu').classList.remove('change');
+            });
+        });
+
+        // Optional: Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (sidebar.classList.contains('active') && !sidebar.contains(event.target) && !mobileMenu.contains(event.target)) {
+                sidebar.classList.remove('active');
+                mobileMenu.classList.remove('change');
+            }
+        });
+    </script>
+
+    <style>
+        @media screen and (max-width: 768px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .work-item {
+                width: 100%;
+            }
+
+            h1{
+                padding-top: 0px;
+            }
+        }
+    </style>
+</body>
+</html>
